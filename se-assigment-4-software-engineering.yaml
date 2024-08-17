@@ -1,0 +1,138 @@
+Github repository is a storage space where your projects files and their version history are kept. its a central location for all files related to a project, and it includes essential elements such as code, documentation, and configuration files.
+
+ creating a new repository
+ 1.sign in : log in to your github account .
+ 2.new repository : click the new button on the repositories page or use the + icon in the upper-right corner of the github homepage 
+ 3.fill out details :provide a repository name ,description,,choose between public or private, and initialize with a Readme file if desired
+ 4.creating repository: click create repository to finalize .
+
+  Essential elements of repository  
+  .Readme.md : provides an overview of a project ,setup instructions, and usage guidelines.
+  .gitignore :specifies which files and dictories should be ignored by git.
+  .License :contains licensing information for a project 
+  .Contrributing.md : guidelines for contributing to a project 
+  .Code_Of_Conduct.md: code of conduct for contributors 
+
+  Version control with git 
+   concept of version control 
+   version in git tracks changes to files and directories over time, allowing you to manage and revert changes, view history of all changes made to a project.
+
+    how github enhances version control 
+    github enhances version control by providing a cloud based platform for git repositories . it offers collaboration features like pull request ,code reviews nad issues tracking, making it easier for teams to work together on a code
+
+    Branching and merging in github
+    branches are separate lines of development that allow you to work on different features or fixes without codebase.they help in isolating changes and managing feature development.
+
+    creating a branch, making changes and merging 
+    1.create a branch :
+    go to the repository on github.
+    click the branch dropdown and type a new branch name .
+    click create branch 
+    2. make changes 
+    check out the new branch locally using git checkout <branch-name>
+    make your changes and commit -am "commit message".
+    push changes to github with git push origin <branch-name>
+    3.merge the branch 
+    -open a pull request from the main branch on github .
+    -review and discuss changes .
+    -merge the pull request after approval.
+
+    pull request and code reviews 
+    -a pull request is a way to a propose changes to the repository . it allows other team members to review ,discuss and approve the changes before they emerge into the main branch .
+
+    steps to create and review a pull request
+    1.create a pull request 
+    -push your branch to github .
+    -navigate to the repository and click compare & pull request.
+    -add a title and description,then click create pull request  
+
+2.review a  pull request 
+-go to the pull request home page 
+-review the code changes , leave comments and request modifications if needed 
+-approve and merge the pull request after all feedback is addressed.
+
+github actions 
+github actions is a CI/CD  and automation service that allows you to create workflows that automatically build,test ,and deploy your code .its  intergrated into github.
+Example of a simple CI/CD pipeline.
+1.Create a workflow file 
+-add a file named .github/workflows/ci.yml to your  repository 
+2.Define the workflow :
+yaml 
+name:CI
+
+on:
+push:
+branches:[main]
+pull_request:
+branches:[main]
+
+jobs:
+build:
+runs-on:ubuntu-latest
+steps:
+-name:checkout code
+uses:actions/checkout@v2
+-name-setup Node.js
+uses:actions/setup-node2v2
+with:
+node-version:'14'
+-name:install dependencies
+run:npm install
+-name:Run tests
+run:npm test
+
+3.push and verify
+-commit and push the workflow file .
+github actions will run the defined workflow on each push or pull request.
+
+Visual studio
+visual studio is an integrated  development enviroment from microsoft that provides comprehensive tools for development across multiple programming languages 
+key features 
+.code editing :advanced editor with intellisense and code suggestion 
+.debugging :integrated debugger with breakpoints, watch windows and stack traces 
+.project management : tools for managing projects, solutions and dependencies 
+.testing : integrated test explorer for unit and automated tests
+.GUI design : visual designers for creating user interfaces.
+
+Differences from visual studio code 
+.visual studio : a full featured IDE suitable for complex development with wide range of tools and build in features
+.visual studio code : a lightweight , highly customized text editor with a focus on speed
+and simplicity . it relies on extensions for additional functionality.
+
+integrated github with visual studio 
+ steps to integrate
+ 1.open visual studio 
+ 2.clone repository 
+ -go to "file"> "open">"repository" and enter the repository URL 
+ 3.sign in to github 
+ -go to "team explorer">manage "connections">"connect" and sign in to your github account.
+ 4.push and pull changes :
+ -use team explorer to manage commits,sync changes ,pull updates from github.
+
+ enhanced development workflow 
+ integration allows seamless version control operations,simplified code collaboration ,and direct access to github features within the IDE, improving productivity and streamlining development processes .
+
+ debugging in visual studio 
+ debugging tools 
+ .breakpoints :set breakpoints to pause execution at specific lines.
+ .watch windows : monitor variables values and expressions
+ .call stacks : view the call stack to understand the sequence of function calls 
+ .immediate window : execute commands and evaluate expressions during debugging 
+
+ using these tools 
+ set breakpoints :click on the margin next to the line number 
+ .start bebugging and pause at breakpoints 
+ .inspect variables :hover over variable or use the watch window to see their values.
+ step through code :use step-over ,step-into ,and step-out  features to navigate through code execution 
+
+ collaboration development using github and visual studio
+  supporting collaborative development
+  .shared repositories : teams can work onnthe same codebase using branches and pull request 
+  .code reviews : facilitated through github's pull requests,allowing for peer review and feedback .
+
+  real world example 
+  in a software development project like web application , a team might use visual studio for coding and debugging while managing their codebase on github. developers create feature branches ,push changes ,open pull request for review ,and collaborations on code improvements. this workflow ensuers coordinated development and effecient version control, leading to a more organized and colaborative development enviroment. 
+
+
+
+
